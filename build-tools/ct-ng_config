@@ -1,7 +1,7 @@
 #
 # Automatically generated make config: don't edit
 # crosstool-NG 1.16.0 Configuration
-# Sun Oct 14 15:23:09 2012
+# Sun Oct 14 16:51:18 2012
 #
 CT_CONFIGURE_has_xz=y
 CT_MODULES=y
@@ -567,3 +567,4 @@ CT_MPC_VERSION="0.9"
 #
 CT_TEST_SUITE=y
 CT_TEST_SUITE_GCC=y
+CT_DEBUG_CT_SAVE_STEPS=y
