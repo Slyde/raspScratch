@@ -2,3 +2,9 @@ crosstool-ng-1.16.0/
 crosstool-ng-1.16.0.tar.bz2
 .config
 ct/
+.build/
+*.2
+*.old
+config
+config.gen/
+build.log
