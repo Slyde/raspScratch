@@ -1,7 +1,7 @@
 #
 # Automatically generated make config: don't edit
 # crosstool-NG 1.16.0 Configuration
-# Fri Sep 21 22:48:04 2012
+# Sun Oct 14 15:23:09 2012
 #
 CT_CONFIGURE_has_xz=y
 CT_MODULES=y
@@ -21,7 +21,7 @@ CT_EXPERIMENTAL=y
 # Paths
 #
 CT_LOCAL_TARBALLS_DIR=""
-CT_WORK_DIR="${BUIDLTOOLS}/.build"
+CT_WORK_DIR="${BUILDTOOLS}/.build"
 CT_PREFIX_DIR="${SDK_PATH}"
 CT_INSTALL_DIR="${CT_PREFIX_DIR}"
 CT_RM_RF_PREFIX_DIR=y
@@ -567,4 +567,3 @@ CT_MPC_VERSION="0.9"
 #
 CT_TEST_SUITE=y
 CT_TEST_SUITE_GCC=y
-CT_DEBUG_CT_SAVE_STEPS=y
