@@ -1,0 +1,35 @@
+Step by step crosstool building
+
+using linux 3.2.27 from raspberry pi github
+
+************************
+1. Creating folders architecture
+
+<base> : base folder
+
+<base>/linux/src   :      linux kernel folder
+<base>/build-tools :      build directory for the toolchain
+<base>/tools       :      will contain the compiled toolchain
+
+
+*************************
+2. getting the sources and tools
+
+crosstool-ng :
+mkdir <base>/build-tools/ct
+cd  base>/build-tools/ct
+wget http://crosstool-ng.org/download/crosstool-ng/crosstool-ng-1.16.0.tar.bz2
+tar xjvf crosstool-ng-1.16.0.tar.bz2
+cd crosstool-ng-1.16.0
+./configure --prefix=<base>/build-tools/bin
+make
+make install
+
+
+***************************
+3. Configuration
+
+PATH=$PATH:<base>/build-tools/ct/bin
+export PATH
+ct-ng menuconfig
+ct-ng build
