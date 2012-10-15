@@ -1,3 +1,6 @@
 *.swp
 binaryPackages
 tools/
+linux/build
+linux/install/
+linux/src/
