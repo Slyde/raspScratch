@@ -5,3 +5,6 @@ linux/build
 linux/install/
 linux/src/
 linux/sysapps/
+*.a
+sysapps/busybox-config-1
+target_fs/
