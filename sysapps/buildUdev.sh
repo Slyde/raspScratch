@@ -10,6 +10,7 @@ export BLKID_LIBS="-L${BASEDIR}/sysapps/busybos/util-linux -lblkid"
 export LIBS="-lpthread"
 export KMOD_CFLAGS="-I/tools/include"
 export KMOD_LIBS="-L${BASEDIR}/rootfs/lib -lkmod"
+export CFLAGS="-O2 --static"
 
 
 cd udev
@@ -18,7 +19,7 @@ cd udev
 #./configure --build=${MACHTYPE} --host=${TARGET_SYS} --prefix=/usr --with-rootprefix='' --bindir=/sbin --sysconfdir=/etc --libexecdir=/lib --disable-introspection --with-usb-ids-path=no --with-pci-ids-path=no --disable-gtk-doc-html --disable-gudev --disable-keymap --disable-logging --with-firmware-path=/lib/firmware
 
 # for udev 170
-./configure --build=${MACHTYPE} --host=${TARGET_SYS} --prefix=/usr --bindir=/sbin --sysconfdir=/etc --libexecdir=/lib --disable-introspection --with-pci-ids-path=no --disable-gtk-doc-html --disable-gudev --disable-keymap --disable-logging --with-firmware-path=/lib/firmware --disable-udev_acl
+./configure --build=${MACHTYPE} --host=${TARGET_SYS} --prefix=/usr --bindir=/sbin --sysconfdir=/etc --libexecdir=/lib --disable-introspection --without-pci-ids-path --disable-gtk-doc-html --disable-gudev --disable-keymap --disable-logging --with-firmware-path=/lib/firmware --disable-udev_acl --enable-static
 
 make
 
