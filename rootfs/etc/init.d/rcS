@@ -4,7 +4,7 @@
 
 /bin/mount -t tmpfs udev /dev
 /bin/cp -a -f /lib/devices/* /dev
-/usr/sbin/udevd
+/usr/sbin/udevd --daemon
 
 #echo /sbin/mdev >/proc/sys/kernel/hotplug
 #/sbin/mdev -s
@@ -18,6 +18,10 @@ if [ -r /etc/modules ]; then
         modprobe $mod
     done </etc/modules
 fi
+
+# configure led 0 as heartbeat
+modprobe ledtrig-heartbeat          
+echo heartbeat >> /sys/class/leds/led0/trigger
 
 # create vchiq device
 [ -x /etc/init.d/vchiq ] && /etc/init.d/vchiq start
