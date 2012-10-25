@@ -1,7 +1,7 @@
 #
 # Automatically generated make config: don't edit
 # crosstool-NG 1.16.0 Configuration
-# Sun Oct 14 16:51:18 2012
+# Fri Oct 26 01:33:09 2012
 #
 CT_CONFIGURE_has_xz=y
 CT_MODULES=y
@@ -15,7 +15,11 @@ CT_MODULES=y
 #
 # CT_OBSOLETE is not set
 CT_EXPERIMENTAL=y
-# CT_DEBUG_CT is not set
+CT_DEBUG_CT=y
+# CT_DEBUG_PAUSE_STEPS is not set
+CT_DEBUG_CT_SAVE_STEPS=y
+CT_DEBUG_CT_SAVE_STEPS_GZIP=y
+# CT_NO_OVERIDE_LC_MESSAGES is not set
 
 #
 # Paths
@@ -565,6 +569,4 @@ CT_MPC_VERSION="0.9"
 #
 # Test suite
 #
-CT_TEST_SUITE=y
-CT_TEST_SUITE_GCC=y
-CT_DEBUG_CT_SAVE_STEPS=y
+# CT_TEST_SUITE_GCC is not set
