@@ -1,0 +1,9 @@
+BUSYBOX :
+git clone git://git.busybox.net/busybox
+git checkout 1_20_stable
+
+
+UDEV : 
+git clone git://git.kernel.org/pub/scm/linux/hotplug/udev.git
+git checkout 175
+// 170 tested, will try 175
