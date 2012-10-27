@@ -8,3 +8,4 @@ ct/
 config
 config.gen/
 build.log
+bin/
