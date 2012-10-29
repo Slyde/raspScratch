@@ -2,12 +2,12 @@
 .\"     Title: udevadm
 .\"    Author: [see the "Author" section]
 .\" Generator: DocBook XSL Stylesheets v1.75.2 <http://docbook.sf.net/>
-.\"      Date: 10/21/2012
+.\"      Date: 10/29/2012
 .\"    Manual: udevadm
 .\"    Source: udev
 .\"  Language: English
 .\"
-.TH "UDEVADM" "8" "10/21/2012" "udev" "udevadm"
+.TH "UDEVADM" "8" "10/29/2012" "udev" "udevadm"
 .\" -----------------------------------------------------------------
 .\" * Define some portability stuff
 .\" -----------------------------------------------------------------
@@ -44,6 +44,8 @@ udevadm \- udev management tool
 \fBudevadm monitor \fR\fB[options]\fR
 .HP \w'\fBudevadm\ test\ \fR\fB[options]\fR\fB\ \fR\fB\fIdevpath\fR\fR\ 'u
 \fBudevadm test \fR\fB[options]\fR\fB \fR\fB\fIdevpath\fR\fR
+.HP \w'\fBudevadm\ test\-builtin\ \fR\fB[options]\fR\fB\ \fR\fB\fIcommand\fR\fR\fB\ \fR\fB\fIdevpath\fR\fR\ 'u
+\fBudevadm test\-builtin \fR\fB[options]\fR\fB \fR\fB\fIcommand\fR\fR\fB \fR\fB\fIdevpath\fR\fR
 .SH "DESCRIPTION"
 .PP
 udevadm expects a command and command specific options\&. It controls the runtime behavior of udev, requests kernel events, manages the event queue, and provides simple debugging mechanisms\&.
@@ -208,6 +210,11 @@ Trigger events for devices with a matching tag\&. This option can be specified m
 .RS 4
 Trigger events for devices with a matching sys device name\&. This option can be specified multiple times and supports shell style pattern matching\&.
 .RE
+.PP
+\fB\-\-parent\-match=\fR\fB\fIsyspath\fR\fR
+.RS 4
+Trigger events for all children of a given device\&.
+.RE
 .SS "udevadm settle [options]"
 .PP
 Watches the udev event queue, and exits if all current events are handled\&.
@@ -339,6 +346,14 @@ The action string\&.
 .RS 4
 The subsystem string\&.
 .RE
+.PP
+\fB\-\-help\fR
+.RS 4
+Print help text\&.
+.RE
+.SS "udevadm test\-builtin [options] \fIcommand\fR \fIdevpath\fR"
+.PP
+Run a built\-in command for the given device, and print debug output\&.
 .PP
 \fB\-\-help\fR
 .RS 4
