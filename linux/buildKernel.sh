@@ -22,7 +22,7 @@ while getopts ":coimCP:" OPT; do
 		i)echo "Building the kernel"
 		sudo rm -fR $INSTREE/boot
 		mkdir -p $INSTREE/boot
-		make O=$BTREE ARCH=arm INSTALL_MOD_PATH=$INSTREE CROSS_COMPILE=$XCOMPILER Image
+		make O=$BTREE ARCH=arm INSTALL_MOD_PATH=$INSTREE CROSS_COMPILE=$XCOMPILER -j 4 Image
 		cp $BTREE/arch/arm/boot/Image $INSTREE/boot/kernel.img
 		cp $BTREE/System.map $INSTREE/boot/System.map
 		sudo chown root:root -R $INSTREE/boot/;;
