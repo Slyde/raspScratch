@@ -7,3 +7,10 @@ UDEV : 
 git clone git://git.kernel.org/pub/scm/linux/hotplug/udev.git
 git checkout 175
 // 170 tested, will try 175
+
+INETUTILS:
+
+wget http://ftp.gnu.org/gnu/inetutils/inetutils-1.9.tar.gz
+
+./configure --prefix=/home/sylvain/raspScratch/rootfs --host=arm-bcm2708-linux-gnueabi
+
