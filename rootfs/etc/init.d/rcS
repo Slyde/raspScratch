@@ -2,12 +2,13 @@
 
 /bin/mount -a
 
-/bin/mount -t tmpfs udev /dev
-/bin/cp -a -f /lib/devices/* /dev
-/usr/sbin/udevd --daemon
+#/bin/mount -t tmpfs udev /dev
+#/bin/cp -a -f /lib/devices/* /dev
+#/usr/sbin/udevd --daemon
+#/etc/init.d/udev start
 
-#echo /sbin/mdev >/proc/sys/kernel/hotplug
-#/sbin/mdev -s
+echo /sbin/mdev >/proc/sys/kernel/hotplug
+/sbin/mdev -s
 
 /sbin/syslogd -C # circular buffer - use logread to read
 /sbin/klogd      # log kernel messages - also available in dmesg
