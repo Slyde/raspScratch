@@ -11,3 +11,4 @@ target_fs/
 sysapps/stress-1.0.4/
 build-tools/lib/
 build-tools/share/
+originalRootfs/

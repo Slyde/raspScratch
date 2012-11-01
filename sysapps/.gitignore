@@ -1,2 +1,7 @@
 busybox/
 udev/
+perl-5.16.1
+zlib-1.2.7
+inetutils-1.9
+dropbear-2012.55
+net-snmp-5.7.2
