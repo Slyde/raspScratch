@@ -1,4 +1,4 @@
 ::sysinit:/etc/init.d/rcS
-::respawn:-/bin/sh
+#::respawn:-/bin/sh
+::once:/sbin/getty 115200 ttyAMA0 -t 10
 ::ctrlaltdel:/bin/umount -a -r
-

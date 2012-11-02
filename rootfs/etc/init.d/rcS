@@ -10,6 +10,9 @@
 echo /sbin/mdev >/proc/sys/kernel/hotplug
 /sbin/mdev -s
 
+mkdir /dev/pts
+mount -t devpts devpts /dev/pts
+
 /sbin/syslogd -C # circular buffer - use logread to read
 /sbin/klogd      # log kernel messages - also available in dmesg
 
@@ -26,9 +29,6 @@ echo heartbeat >> /sys/class/leds/led0/trigger
 
 # create vchiq device
 [ -x /etc/init.d/vchiq ] && /etc/init.d/vchiq start
-echo
-echo Greetings from standalone Raspberry Pi
-echo
 
 if [ -f /proc/cmdline -a -x /usr/local/bin/rpitestmode.sh ]; then
     if grep rpitestmode /proc/cmdline>/dev/null; then
@@ -38,6 +38,21 @@ if [ -f /proc/cmdline -a -x /usr/local/bin/rpitestmode.sh ]; then
     fi
 fi
 
+# set hostname
+hostname -F /etc/hostname
+
 # use an artificial SysRq-g to interrupt
 # echo Attempting to enter the debugger! ....
 # echo g > /proc/sysrq-trigger
+
+
+echo "Start eth0"
+sleep 2
+ifdown eth0
+sleep 1
+ifup eth0
+
+
+echo "Start inetd services"
+inetd
+
