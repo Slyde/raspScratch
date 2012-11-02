@@ -12,3 +12,6 @@ sysapps/stress-1.0.4/
 build-tools/lib/
 build-tools/share/
 originalRootfs/
+*.img
+*.tbz2
+*.old
