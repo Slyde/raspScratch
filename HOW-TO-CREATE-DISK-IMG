@@ -1,0 +1,45 @@
+1. Create an empty image file
+# dd bs=512 count=$((2*1024*100)) if=/dev/zero of=targetFile.img
+*** $((2*1024*100)) : nb of blocks example is for 100Mo file
+
+2. Connect the image to a loop device
+# losetup /dev/loop0 targetFile.img
+
+3. Use cfdisk to create partition table
+# cfdisk /dev/loop0
+
+4. List the partition offsets
+# fdisk -ul targetFile.img
+*** output example : 
+You must set cylinders.
+You can do this from the extra functions menu.
+
+Disk targetFile.img: 0 MB, 0 bytes
+255 heads, 63 sectors/track, 0 cylinders, total 0 sectors
+Units = sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disk identifier: 0x9705045f
+
+         Device Boot      Start         End      Blocks   Id  System
+targetFile.img1   *          63       16064        8001    c  W95 FAT32 (LBA)
+targetFile.img2           16065      192779       88357+  83  Linux
+
+5. Map each partition to a loop device
+# losetup -o $((63*512)) /dev/loop1 targetFile.img
+# losetup -o $((16065*512)) /dev/loop2 targetFile.img
+
+6. Format the partitions
+# mkfs.vfat -F32 /dev/loop1
+# mkfs.ext4 /dev/loop2
+
+7. Mount the partitions
+# mkdir part1
+# mount -t vfat /dev/loop1 part1
+# mkdir part2
+# mount -t ext4 /dev/loop2 part2
+
+8. Unmount and detach the loop and that's it !
+
+9. Copy to the target device 
+# dd bs=512 if=targetFile.img of=/dev/sdb
