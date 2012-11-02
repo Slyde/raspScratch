@@ -17,9 +17,6 @@ patch -p0 <patches/inetutils-1.9.confpaths.h
 NET-SNMP: 
 wget -O net-snmp-5.7.2.tar.gz http://sourceforge.net/projects/net-snmp/files/net-snmp/5.7.2/net-snmp-5.7.2.tar.gz/download
 
-PERL:
-wget http://www.cpan.org/src/5.0/perl-5.16.1.tar.gz
-
 ./configure --prefix=${BASEDIR}/rootfs --with-cc=arm-bcm2708-linux-gnueabi-gcc --host=${TARGET_SYS} --with-default-snmp-version=3 --with-sys-contact=s.decastel@gmail.com --with-sys-location=RPI --with-logfile=/var/log/snmpd.log --with-persistent-directory=/var/net-snmp --without-perl-modules --disable-embedded-perl
 
 DROPBEAR :
@@ -32,3 +29,9 @@ wget http://zlib.net/zlib-1.2.7.tar.gz
 ./configure --prefix=${BASEDIR}/tools/arm-bcm2708-linux-gnueabi/sysroot
 sudo cp zlib.h zconf.h ../../tools/arm-bcm2708-linux-gnueabi/sysroot/usr/include/
 cp libz.* ../../rootfs/lib/
+
+PHP:
+wget -O php-5.4.8.tar.bz2 http://ch2.php.net/get/php-5.4.8.tar.bz2/from/ch1.php.net/mirror
+
+LIBXML2:
+git clone git://git.gnome.org/libxml2
