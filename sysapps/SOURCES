@@ -26,17 +26,17 @@ fakeroot make install
 
 ZLIB:
 wget http://zlib.net/zlib-1.2.7.tar.gz
-./configure --prefix=${BASEDIR}/tools/arm-bcm2708-linux-gnueabi/sysroot
+./configure --prefix=${SDK_PATH}/arm-bcm2708-linux-gnueabi/sysroot
 sudo cp zlib.h zconf.h ../../tools/arm-bcm2708-linux-gnueabi/sysroot/usr/include/
 cp libz.* ../../rootfs/lib/
 
 PHP:
 wget -O php-5.4.8.tar.bz2 http://ch2.php.net/get/php-5.4.8.tar.bz2/from/ch1.php.net/mirror
-./configure --prefix=${BASEDIR}/rootfs --host=${TARGET_SYS} --with-libxml-dir=../../tools/arm-bcm2708-linux-gnueabi/sysroot/
+./configure --prefix=${BASEDIR}/rootfs --host=${TARGET_SYS} --with-libxml-dir=${SDK_PATH}/arm-bcm2708-linux-gnueabi/sysroot/
 
 LIBXML2:
 git clone git://git.gnome.org/libxml2
-./configure --prefix=${BASEDIR}/tools/arm-bcm2708-linux-gnueabi/sysroot --host=${TARGET_SYS} --without-python --includedir=${BASEDIR}/tools/arm-bcm2708-linux-gnueabi/sysroot/usr/include
+./configure --prefix=${SDK_PATH}/arm-bcm2708-linux-gnueabi/sysroot --host=${TARGET_SYS} --without-python --includedir=${SDK_PATH}/arm-bcm2708-linux-gnueabi/sysroot/usr/include
 make install
-sudo cp ${BASEDIR}/tools/arm-bcm2708-linux-gnueabi/sysroot/lib/libxml2.* ${BASEDIR}/rootfs/lib/
-sudo cp ${BASEDIR}/tools/arm-bcm2708-linux-gnueabi/sysroot/bin/xml* ${BASEDIR}/rootfs/bin/
+sudo cp ${SDK_PATH}/arm-bcm2708-linux-gnueabi/sysroot/lib/libxml2.* ${BASEDIR}/rootfs/lib/
+sudo cp ${SDK_PATH}/arm-bcm2708-linux-gnueabi/sysroot/bin/xml* ${BASEDIR}/rootfs/bin/
