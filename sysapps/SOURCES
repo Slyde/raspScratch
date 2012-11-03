@@ -35,3 +35,4 @@ wget -O php-5.4.8.tar.bz2 http://ch2.php.net/get/php-5.4.8.tar.bz2/from/ch1.php.
 
 LIBXML2:
 git clone git://git.gnome.org/libxml2
+./configure --prefix=${BASEDIR}/tools/arm-bcm2708-linux-gnueabi/sysroot --host=${TARGET_SYS} --without-python --includedir=${BASEDIR}/tools/arm-bcm2708-linux-gnueabi/sysroot/usr/include
