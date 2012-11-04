@@ -1,0 +1,11 @@
+--- php-5.4.8/Makefile.old	2012-11-03 23:28:51.691229000 +0100
++++ php-5.4.8/Makefile	2012-11-03 23:28:13.262228547 +0100
+@@ -67,7 +67,7 @@
+ EXTENSION_DIR = /home/sylvain/raspScratch/rootfs/lib/php/extensions/no-debug-non-zts-20100525
+ EXTRA_LDFLAGS =
+ EXTRA_LDFLAGS_PROGRAM =
+-EXTRA_LIBS = -lcrypt -lcrypt -lrt -lm -lcrypt -lcrypt
++EXTRA_LIBS = -lcrypt -lcrypt -lrt -lm -lcrypt -lcrypt -ldl
+ ZEND_EXTRA_LIBS =
+ INCLUDES = -I/home/sylvain/raspScratch/sysapps/php-5.4.8/ext/date/lib -I/home/sylvain/raspScratch/sysapps/php-5.4.8/ext/ereg/regex -I/home/sylvain/raspScratch/sysapps/php-5.4.8/ext/sqlite3/libsqlite -I$(top_builddir)/TSRM -I$(top_builddir)/Zend
+ EXTRA_INCLUDES =
