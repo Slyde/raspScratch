@@ -7,3 +7,8 @@ dropbear-2012.55
 net-snmp-5.7.2
 libxml2
 php*
+apr
+httpd
+httpd*
+apr*
+rsync*
